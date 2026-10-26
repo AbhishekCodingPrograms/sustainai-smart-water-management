@@ -1,0 +1,16 @@
+flowchart LR
+  D[Historical CSV or future sensor gateway] --> V{Quality validation}
+  V -->|invalid| Q[Quality review and repair]
+  V -->|valid| F[Past only feature engineering]
+  R[Verified normal reference] --> T[Earlier 70 percent fit]
+  R --> C[Later 30 percent calibration]
+  T --> M[Isolation Forest]
+  C --> H[Quantile threshold]
+  F --> M
+  M --> S[Anomaly score and context]
+  H --> S
+  S --> P[Persistence and separate critical rules]
+  P --> A[Inspection ticket]
+  A --> I[Human acknowledgement inspection and resolution]
+  I --> E[Expert review of feedback and drift]
+  E -. versioned update only .-> R

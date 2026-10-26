@@ -1,0 +1,45 @@
+{
+  "scope": "Synthetic seed 42 only; no field accuracy or savings claim",
+  "reference_rows": 1920,
+  "training_rows": 1344,
+  "calibration_rows": 576,
+  "evaluation_rows": 960,
+  "threshold": 0.5866461802335885,
+  "calibration_exceedance_rate": 0.008680555555555556,
+  "inspection_tickets": 2,
+  "labelled_anomalous_readings": 34,
+  "model_flag": {
+    "tp": 19,
+    "fp": 20,
+    "fn": 15,
+    "tn": 906
+  },
+  "alert": {
+    "tp": 11,
+    "fp": 2,
+    "fn": 23,
+    "tn": 924
+  },
+  "scenarios": {
+    "normal": {
+      "readings": 926,
+      "ai_flags": 20,
+      "alert_readings": 2
+    },
+    "simulated_leak": {
+      "readings": 20,
+      "ai_flags": 12,
+      "alert_readings": 7
+    },
+    "simulated_burst": {
+      "readings": 6,
+      "ai_flags": 6,
+      "alert_readings": 4
+    },
+    "simulated_pressure_fault": {
+      "readings": 8,
+      "ai_flags": 1,
+      "alert_readings": 0
+    }
+  }
+}
