@@ -2,7 +2,17 @@
 
 Author: Abhishek Maurya. Verification date: 27 October 2026 (Asia/Kolkata).
 
-## Environment and checks
+## Cloud compatibility update
+
+The supplied Streamlit Cloud log uses Python 3.14.9 and attempts source builds of the original NumPy 2.2.6 and pandas 2.2.3 pins. The updated requirements use NumPy 2.3.3, pandas 2.3.3, Streamlit 1.52.2 and Altair 6.0.0. Scikit-learn remains 1.7.2. Upgrading only NumPy and pandas was insufficient: a real Python 3.14 test exposed Altair 5.5.0's `TypedDict(closed=True)` import error, so both UI packages were updated as well.
+
+Updated environment: Windows, CPython **3.14.8**. Binary-only installation succeeded. **16 tests passed in 24.09 seconds**, including the Streamlit application smoke test. `evaluate.py` reproduced the exact threshold and synthetic confusion counts below. The test output is in `test-results-py314.txt`; current package versions are in the root `requirements-lock.txt`.
+
+An independent pip dry-run with Linux x86-64 CPython 3.14 platform and ABI tags resolved all 42 runtime packages to wheels; no source build was required. A compact record is in `cloud-wheel-check.json`. This verifies package availability for the cloud platform, not live service health. An optional GitHub Actions matrix template is provided as `python-compatibility-workflow.example.yml`. It was not installed or executed because the available GitHub token does not permit publishing workflow files; the application fix does not require that permission.
+
+Original Python 3.12 package versions and results are preserved below and in `requirements-original-py312.txt` for provenance. The primary PDF describes the original tested prototype. Its workflow and model behaviour are unchanged by this dependency compatibility update.
+
+## Original submission environment and checks
 
 Windows, CPython 3.12. Packages installed from PyPI into an isolated task directory; no user-wide environment changes. Core versions: NumPy 2.2.6, pandas 2.2.3, scikit-learn 1.7.2, Streamlit 1.50.0, Altair 5.5.0, pytest 8.4.2. Full versions are in requirements-lock.txt.
 

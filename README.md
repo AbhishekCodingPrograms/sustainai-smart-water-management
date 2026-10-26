@@ -6,7 +6,7 @@ A runnable **demo prototype**, not a commissioned IoT installation. The app revi
 
 ## Start here
 
-Use Python **3.12**. From this extracted project directory:
+Use Python **3.12** or **3.14**. The original submission was tested on 3.12; the cloud compatibility update uses NumPy 2.3.3 and pandas 2.3.3 to provide Python 3.14 wheels. From this extracted project directory:
 
 ```powershell
 python -m venv .venv
@@ -24,7 +24,7 @@ python -m sustainai.data --output data/demo.csv --seed 42
 python evaluate.py
 ```
 
-`requirements-lock.txt` records all dependency versions used in verification. For a closer environment reproduction, install it instead of the shorter requirements files. This lock was tested on Windows with Python 3.12; other operating systems were not tested.
+`requirements-lock.txt` records the dependency snapshot for the updated verification environment. For a closer environment reproduction, install it instead of the shorter requirements files. The historical Python 3.12 submission snapshot is retained as `docs/requirements-original-py312.txt`; it should not be installed on Python 3.14. See `docs/VERIFIED_RESULTS.md` for the tested environments and cloud wheel-resolution checks. An optional GitHub Actions template for Linux with Python 3.12 and 3.14 is provided in `docs/python-compatibility-workflow.example.yml`; it has not been installed or executed.
 
 ## Five minute demonstration
 
