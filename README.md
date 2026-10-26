@@ -1,6 +1,7 @@
 # SustainAI — AI Enabled Smart Water Management and Leak Detection
 
 **Abhishek Maurya · SustainAI Assignment 3B**
+LIVE : https://sustainai-smart-water-management.streamlit.app/
 
 A runnable **demo prototype**, not a commissioned IoT installation. The app reviews historical readings, highlights unusual behaviour and gives a maintenance operator an evidence-based inspection queue. All bundled readings are synthetic. No live telemetry, external notifications, automatic valve control or real water savings are claimed.
 
